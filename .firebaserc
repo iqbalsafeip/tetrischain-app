@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "app-tetrischain",
+    "testing": "test-tetrischain",
+    "dev": "app-tetrischain"
+  },
+  "targets": {},
+  "etags": {}
+}

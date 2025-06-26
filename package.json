@@ -1,0 +1,41 @@
+{
+  "name": "futuristic-tetris",
+  "version": "1.1.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.2.2",
+    "@headlessui/tailwindcss": "^0.2.2",
+    "@heroicons/react": "^2.2.0",
+    "@solana-mobile/wallet-adapter-mobile": "^2.2.0",
+    "@solana/wallet-adapter-base": "^0.9.26",
+    "@solana/wallet-adapter-ledger": "^0.9.28",
+    "@solana/wallet-adapter-magiceden": "^0.1.13",
+    "@solana/wallet-adapter-mathwallet": "^0.9.21",
+    "@solana/wallet-adapter-phantom": "^0.9.27",
+    "@solana/wallet-adapter-react": "^0.15.38",
+    "@solana/wallet-adapter-react-ui": "^0.9.38",
+    "@solana/wallet-adapter-react-ui-starter": "^0.9.37",
+    "@solana/wallet-adapter-solflare": "^0.6.31",
+    "@solana/wallet-adapter-tokenpocket": "^0.4.22",
+    "@solana/wallet-adapter-torus": "^0.11.31",
+    "@solana/wallet-adapter-trust": "^0.1.16",
+    "@solana/wallet-adapter-walletconnect": "^0.1.20",
+    "@solana/wallet-adapter-wallets": "^0.19.36",
+    "@solana/web3.js": "^1.98.2",
+    "@supabase/supabase-js": "^2.50.2",
+    "autoprefixer": "^10.4.15",
+    "framer-motion": "^10.16.4",
+    "next": "^13.5.11",
+    "postcss": "^8.4.24",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.12.0",
+    "tailwindcss": "^3.4.1",
+    "use-sound": "^5.0.0"
+  }
+}
