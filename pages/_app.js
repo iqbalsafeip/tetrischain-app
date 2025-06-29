@@ -8,7 +8,7 @@ import '@/public/App.css'; // Add necessary styles here
 
 // Client Components:
 
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
   ConnectionProvider,
   useWallet,
@@ -27,6 +27,8 @@ import { TorusWalletAdapter } from '@solana/wallet-adapter-torus';
 import { LedgerWalletAdapter } from '@solana/wallet-adapter-ledger';
 import { MathWalletAdapter } from '@solana/wallet-adapter-mathwallet';
 import { TokenPocketWalletAdapter } from '@solana/wallet-adapter-tokenpocket';
+import { supabase } from '@/utils/supabase';
+import { useRouter } from 'next/navigation';
 // import { UnsafeBurnerWalletAdapter } from "@solana/wallet-adapter-wallets";
 
 // Default styles that can be overridden by your app
@@ -48,13 +50,32 @@ export default function main({ Component, pageProps }) {
     new TokenPocketWalletAdapter()
   ], [endpoint]);
 
+  const [user, setUser] = useState({});
+  const route = useRouter()
+  useEffect(() => {
+
+    supabase.auth.getUser().then((res) => {
+      setUser(e => {
+        console.log(res);
+        if(res.data.user !== null){
+          
+          return res.data.user.user_metadata
+        } else {
+          route.replace('/login')
+        }
+        
+      })
+    })
+    .catch((err => {
+    }))
+  }, [])
 
   return (
     <div>
-      <ConnectionProvider  endpoint={endpoint}>
+      <ConnectionProvider endpoint={endpoint}>
         <WalletProvider wallets={wallets}>
           <WalletModalProvider>
-            <Component {...pageProps} />
+            <Component {...pageProps} user={user} />
           </WalletModalProvider>
         </WalletProvider>
       </ConnectionProvider>
